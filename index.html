@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#2f7de1"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KineticX – Move. Fuel. Level up.</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap">
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--tx:#1c2433;--mu:#69758a;--bd:#e4e8f0;--wr:#e0803a;--bad:#d64545;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10141d;--card:#1a2130;--tx:#e9eef7;--mu:#9aa6bb;--bd:#2a3347;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10141d;--card:#1a2130;--tx:#e9eef7;--mu:#9aa6bb;--bd:#2a3347;color-scheme:dark}
+:root,:root[data-sex="m"]{--ac:#2f7de1;--hero:linear-gradient(135deg,#1f5fd1,#17b3b0)}
+:root[data-sex="f"]{--ac:#d9438f;--hero:linear-gradient(135deg,#e0489b,#9b5de5)}
+:root{--ac2:color-mix(in srgb,var(--ac) 14%,transparent)}
+.brand{display:flex;justify-content:space-between;align-items:center;margin:4px 0 12px}.logo{font-size:26px;font-weight:800;letter-spacing:-1px;background:var(--hero);-webkit-background-clip:text;background-clip:text;color:transparent}.logo small{display:block;font-size:11px;font-weight:600;letter-spacing:2px;color:var(--mu);-webkit-text-fill-color:var(--mu);text-transform:uppercase;margin-top:-4px}
+.lv{background:var(--hero);color:#fff;border-radius:99px;padding:6px 12px;font-weight:700;font-size:13px;box-shadow:0 4px 14px color-mix(in srgb,var(--ac) 40%,transparent)}
+.card{box-shadow:0 6px 20px rgba(20,30,60,.06)}button:not(.x):not(.chip):not(.sec):not(.pets button):not(nav button){background:var(--hero)!important;box-shadow:0 4px 14px color-mix(in srgb,var(--ac) 35%,transparent)}
+nav{backdrop-filter:blur(12px)}nav button.on{font-weight:700}.big{background:var(--hero);-webkit-background-clip:text;background-clip:text;color:transparent!important}.bar>i{background:var(--hero)!important}
+.hero{background:var(--hero);box-shadow:0 10px 30px color-mix(in srgb,var(--ac) 40%,transparent);color:#fff;border-radius:22px;padding:16px;margin-bottom:12px;display:flex;gap:12px;align-items:center}
+.pet{width:100px;height:100px;flex:none;display:flex;align-items:center;justify-content:center}.pets svg{display:block;margin:0 auto 4px}
+.pt{position:relative;display:flex;align-items:center;justify-content:center;line-height:1;margin:0 auto;animation:roam 7s ease-in-out infinite}.pt *{animation-delay:var(--d,0s)}
+@keyframes roam{0%,100%{transform:translateX(-7px)}50%{transform:translateX(7px)}}
+.em{display:block;transform-origin:50% 100%;animation:jmp 2.6s ease-in-out infinite,rr 6s infinite,shk 6s infinite;filter:drop-shadow(0 6px 6px rgba(0,0,0,.25))}
+@keyframes jmp{0%,100%{transform:scale(1.04,.94)}12%{transform:scale(.97,1.04)}40%{transform:translateY(-14%) scale(.98,1.03)}68%{transform:scale(1.04,.94)}80%{transform:none}}
+@keyframes rr{0%,64%{filter:drop-shadow(0 6px 6px rgba(0,0,0,.25))}68%,80%{filter:drop-shadow(0 6px 6px rgba(0,0,0,.25)) brightness(1.12) saturate(1.3)}84%,100%{filter:drop-shadow(0 6px 6px rgba(0,0,0,.25))}}
+@keyframes shk{0%,66%,84%,100%{rotate:0deg}70%{rotate:-6deg}74%{rotate:6deg}78%{rotate:-6deg}}
+.sh{position:absolute;bottom:-3px;left:20%;right:20%;height:6px;border-radius:50%;background:rgba(0,0,0,.18);animation:shd 2.6s ease-in-out infinite}@keyframes shd{40%{transform:scale(.65);opacity:.5}}
+.rb{position:absolute;right:-14px;top:-8px;font:800 11px Poppins,system-ui,sans-serif;background:#fff;color:#d6336c;border-radius:99px;padding:3px 8px;box-shadow:0 2px 8px rgba(0,0,0,.2);opacity:0;white-space:nowrap;animation:rb 6s infinite;z-index:2}@keyframes rb{0%,66%{opacity:0;transform:scale(.4)}70%,80%{opacity:1;transform:scale(1)}84%,100%{opacity:0;transform:scale(.4)}}
+.tw{position:absolute;font-size:14px;color:#ffd54a;animation:tw 2s ease-in-out infinite}@keyframes tw{50%{opacity:.2}}
+@media (prefers-reduced-motion:reduce){.pt,.pt *{animation:none!important}}
+.hero .say{background:rgba(255,255,255,.2);border-radius:14px;padding:8px 10px;font-size:14px}
+.chip{width:auto!important;display:inline-block;background:var(--ac2)!important;color:var(--ac)!important;padding:8px 14px!important;border-radius:99px!important;margin:3px 3px 3px 0}.chip.on{background:var(--ac)!important;color:#fff!important}
+.pets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.pets button{background:var(--ac2);color:var(--tx);padding:10px 4px;font-weight:500}.pets button.on{outline:3px solid var(--ac)}.pets b{display:block}
+.day{display:flex;gap:10px;align-items:center;padding:9px 8px;border-radius:12px}.day.now{background:var(--ac2)}.day b{width:34px}.day span{flex:1}.day button{width:auto;padding:6px 12px}
+.warn{background:color-mix(in srgb,var(--wr) 16%,transparent);border:1px solid var(--wr);border-radius:14px;padding:12px;margin-bottom:12px}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 "Poppins",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:78px}
+main{max-width:560px;margin:0 auto;padding:14px}
+h1{font-size:22px;font-weight:800;margin:6px 0 2px}h2{font-size:16px;margin:0 0 10px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;margin-bottom:12px}
+.mu{color:var(--mu);font-size:13px}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row>*{flex:1;min-width:90px}
+label{display:block;font-size:12px;color:var(--mu);margin:8px 0 3px}
+input,select,button{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:9px 10px;width:100%}
+button{background:var(--ac);color:#fff;border:0;font-weight:600;cursor:pointer}button.sec{background:var(--ac2);color:var(--ac)}button.x{width:auto;background:none;color:var(--mu);padding:2px 8px}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav button{background:none;color:var(--mu);border-radius:0;font-size:12px;padding:10px 2px}nav button.on{color:var(--ac)}
+.big{font-size:34px;font-weight:700;line-height:1}.bar{height:12px;background:var(--ac2);border-radius:8px;overflow:hidden;margin:10px 0 6px}.bar>i{display:block;height:100%;background:var(--ac)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}.stats b{display:block;font-size:18px}
+.item{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-top:1px solid var(--bd);align-items:center}.item:first-of-type{border-top:0}
+.toast{background:var(--ac2);border:1px solid var(--ac);border-radius:14px;padding:12px;margin-bottom:12px}
+.chart{display:flex;gap:6px;align-items:flex-end;height:110px}.chart div{flex:1;text-align:center;font-size:11px;color:var(--mu);display:flex;flex-direction:column;justify-content:flex-end;height:100%}.chart i{display:block;background:var(--ac);border-radius:5px 5px 0 0;min-height:2px}
+.pill{display:inline-block;padding:2px 8px;border-radius:99px;background:var(--ac2);color:var(--ac);font-size:12px}
+img.pv{width:100%;max-height:200px;object-fit:cover;border-radius:12px;margin-top:8px}
+.wt{display:flex;gap:6px;flex-wrap:wrap}.wt button{width:auto;padding:7px 12px}
+</style></head><body><main id="app"></main>
+<nav id="nav"></nav>
+<script>
+const FOODS={
+Indian:[["Roti / Chapati","pc",100],["Dal (cooked)","bowl",180],["Paneer butter masala","bowl",350],["Chicken biryani","plate",500],["Idli","pc",40],["Masala dosa","pc",250],["Samosa","pc",260],["Rajma chawal","plate",420],["Curd","bowl",100]],
+Chinese:[["Veg fried rice","bowl",330],["Hakka noodles","bowl",300],["Veg Manchurian","plate",280],["Spring roll","pc",120],["Hot & sour soup","bowl",90],["Chilli chicken","plate",300],["Dim sum","pc",45]],
+Italian:[["Margherita pizza","slice",270],["Pasta Alfredo","plate",450],["Spaghetti marinara","plate",350],["Lasagna","piece",400],["Mushroom risotto","bowl",380],["Garlic bread","pc",150],["Tiramisu","piece",350]],
+American:[["Cheeseburger","pc",500],["French fries","serving",365],["Hot dog","pc",300],["Caesar salad","bowl",330],["Fried chicken","pc",320],["Mac & cheese","bowl",400],["Pancakes","pc",90]]};
+const WO={Walking:3.5,Running:8,Gym:5,Badminton:5.5},WI={Walking:"🚶",Running:"🏃",Gym:"🏋️",Badminton:"🏸"};
+const GRP=["Upper body","Stomach","Lower body","Legs","Back","Chest"];
+const PETS={m:[["godzilla","🦖","Godzilla"],["kong","🦍","King Kong"],["dino","🦕","Dino"],["dragon","🐉","Dragon"],["wolf","🐺","Wolf"],["lion","🦁","Lion"]],
+f:[["unicorn","🦄","Unicorn"],["bdino","🦕","Baby Dino"],["kitty","🐱","Kitty"],["bunny","🐰","Bunny"],["panda","🐼","Panda"],["fox","🦊","Fox"]]};
+const SND={godzilla:"RAWR!",kong:"OOH-OOH!",dino:"ROAR!",dragon:"RAWR!",wolf:"AWOO!",lion:"ROAR!",unicorn:"NEIGH!",bdino:"RAWR!",kitty:"MEOW!",bunny:"SQUEAK!",panda:"GRRR!",fox:"YIP!"};
+function petSVG(id,w){const e=[...PETS.m,...PETS.f].find(x=>x[0]==id)||PETS.m[0],d=(-Math.random()*5).toFixed(1);
+return `<div class="pt" style="--d:${d}s;width:${w}px;height:${w}px;font-size:${w*.82}px"><span class="em">${e[1]}</span><span class="rb">${SND[id]||"ROAR!"}</span><span class="tw" style="left:-4px;top:4px">✦</span><span class="tw" style="right:-2px;bottom:18px;animation-delay:-1s;color:#7ee0ff">✦</span><i class="sh"></i></div>`}
+const D=["Mon","Tue","Wed","Thu","Fri","Sat"];
+const PLAN={lose:[["Running","",30,"Cardio burn"],["Gym","Upper body, Stomach",45,"Strength + core"],["Walking","",45,"Brisk walk"],["Gym","Legs, Lower body",45,"Big muscles burn more"],["Badminton","",45,"Fun cardio"],["Running","",35,"Intervals: 1 min fast, 2 min easy"]],
+gain:[["Gym","Chest",50,"Push: bench, press, flyes"],["Gym","Back",50,"Pull: rows, pulldowns"],["Gym","Legs",50,"Squats, lunges"],["Gym","Upper body",50,"Shoulders & arms"],["Gym","Lower body, Stomach",45,"Deadlift + core"],["Walking","",30,"Light recovery walk"]],
+maintain:[["Running","",30,"Steady cardio"],["Gym","Upper body",40,"Full upper"],["Badminton","",45,"Play!"],["Gym","Legs",40,"Lower strength"],["Walking","",40,"Easy walk"],["Gym","Stomach, Back",40,"Core & posture"]]};
+const MEALS=["Breakfast","Lunch","Snack","Dinner"];
+const TIPS=["Drink a glass of water before each meal – it helps portion control.","Aim for half your plate as vegetables, a quarter protein, a quarter carbs.","A 10-minute walk after meals helps digestion and blood sugar.","Sleep 7–8 hours: poor sleep raises hunger hormones.","Eat slowly – fullness signals take about 20 minutes.","Swap fried snacks for roasted chana, fruit or nuts a few days a week."];
+let S;try{S=JSON.parse(localStorage.getItem("fitbite"))}catch(e){}
+S=S||{p:{h:170,w:70,age:30,sex:"m",act:1.375,goal:"maintain",pet:"godzilla",pn:"",name:""},meals:[],wo:[],water:{}};
+const save=()=>{try{localStorage.setItem("fitbite",JSON.stringify(S))}catch(e){}};
+const $=s=>document.querySelector(s),esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const today=()=>{const d=new Date();return new Date(d-d.getTimezoneOffset()*6e4).toISOString().slice(0,10)};
+const dayOf=n=>{const d=new Date();d.setDate(d.getDate()-n);return new Date(d-d.getTimezoneOffset()*6e4).toISOString().slice(0,10)};
+let dw={type:"Walking",g:[],custom:"",min:30};let tab="today",toast="",draft={cuisine:"Indian",food:0,kcal:null,name:"",img:null,busy:""};
+const bmi=()=>S.p.w/((S.p.h/100)**2);
+const bmiCat=b=>b<18.5?["Underweight","var(--wr)"]:b<25?["Healthy","var(--ac)"]:b<30?["Overweight","var(--wr)"]:["Obese","var(--bad)"];
+const bmr=()=>10*S.p.w+6.25*S.p.h-5*S.p.age+(S.p.sex=="m"?5:-161);
+const goal=()=>Math.round(bmr()*S.p.act+({lose:-400,maintain:0,gain:300}[S.p.goal]));
+const eaten=d=>S.meals.filter(m=>m.date==d).reduce((a,m)=>a+m.kcal,0);
+const burned=d=>S.wo.filter(w=>w.date==d).reduce((a,w)=>a+w.kcal,0);
+const left=d=>goal()+burned(d)-eaten(d);
+const pet=()=>PETS[S.p.sex].find(x=>x[0]==S.p.pet)||PETS[S.p.sex][0];
+function theme(){document.documentElement.dataset.sex=S.p.sex}
+const dow=()=>(new Date().getDay()+6)%7;
+function missed(){let n=0;for(let k=1;k<=dow();k++)if(!S.wo.some(w=>w.date==dayOf(k)))n++;return n}
+function say(){const d=today(),h=pet()[2],w=S.wo.some(x=>x.date==d),m=missed(),n=S.p.name||"champ";
+if(dow()==6&&m>=2)return `${n}, we missed ${m} days. Bonus Sunday workout? I’ll cheer loudly!`;
+if(w)return `Roar-some, ${n}! Workout done today. I’m so proud!`;
+if(!eaten(d)&&new Date().getHours()<11)return `Good morning ${n}! Log breakfast, then let’s move!`;
+if(m>=2)return `Missed ${m} days this week, ${n}. A quick 20 minutes today?`;
+if(dow()<6){const t=PLAN[S.p.goal][dow()];return `Today: ${t[0]} ${t[1]} for ${t[2]} min. I’ll be right beside you!`}
+return `Sunday = rest day. Stretch, hydrate and eat well!`}
+const EX=[["Skipping rope",11,"🪢"],["Jumping jacks",8,"🤸"],["Stair climbing",8,"🪜"],["Bodyweight squats",5,"🦵"],["Dancing",5,"💃"],["Brisk walk",3.8,"🚶"]];
+const mins=(gap,x)=>Math.max(1,Math.ceil(gap/(x[1]*S.p.w/60)));
+const gapOf=()=>{const d=today();return eaten(d)-(goal()+burned(d))};
+function gapMsg(){const g=gapOf();if(g>0){const x=EX[0];return `You’re ${g} kcal over today’s budget. ${x[0]} for ${mins(g,x)} min (or jumping jacks ${mins(g,EX[1])} min) closes the gap.`}return `${-g} kcal to spare today. A 10-min brisk walk burns about ${Math.round(3.8*S.p.w/6)} kcal.`}
+function notify(t,b){toast=b;try{if(!("Notification"in window)||Notification.permission!="granted")return;const o={body:b,tag:"kineticx",renotify:true,requireInteraction:true,icon:"icon-192.png",badge:"icon-192.png"};
+if("serviceWorker"in navigator)navigator.serviceWorker.ready.then(r=>r.showNotification(t,o)).catch(()=>{try{new Notification(t,o)}catch(e){}});else new Notification(t,o)}catch(e){}}
+function pinGap(){notify("⚡ KineticX – today’s calorie gap",gapMsg());if(!("Notification"in window)||Notification.permission!="granted")alert("Enable notifications first (button above). The gap summary will then stay in your phone’s notification shade.");render()}
+function logEx(i,m){const x=EX[i];S.wo.push({id:Date.now(),date:today(),type:x[0],detail:"",min:m,kcal:Math.round(x[1]*S.p.w*m/60)});save();notify("Workout logged",`${x[0]} ${m} min – ${Math.round(x[1]*S.p.w*m/60)} kcal burned. ${gapMsg()}`);render()}
+function gapCard(){const d=today(),e=eaten(d),b=burned(d),g=goal(),a=g+b,gap=e-a,mx=Math.max(e,b,a,1);
+const row=(l,v,c)=>`<div style="margin:6px 0"><div class="row" style="justify-content:space-between;flex-wrap:nowrap"><span>${l}</span><b>${v} kcal</b></div><div class="bar" style="margin:3px 0"><i style="width:${v/mx*100}%;background:${c}!important"></i></div></div>`;
+const list=(gap>0?EX.slice(0,3):EX.slice(3)).map(x=>{const i=EX.indexOf(x),m=gap>0?mins(gap,x):10;return `<div class="day"><b>${x[2]}</b><span>${x[0]}<br><small class="mu">${m} min · ~${Math.round(x[1]*S.p.w*m/60)} kcal</small></span><button class="sec" onclick="logEx(${i},${m})">Log</button></div>`}).join("");
+return `<div class="card"><h2>⚖️ Intake vs burn</h2>${row("🍽️ Eaten",e,"var(--ac)")}${row("🔥 Burned",b,"var(--wr)")}${row("🎯 Allowed (budget + burned)",a,"var(--mu)")}
+<div style="margin:8px 0;padding:10px;border-radius:12px;background:${gap>0?"color-mix(in srgb,var(--bad) 14%,transparent)":"var(--ac2)"}"><b>${gap>0?`Gap to close: ${gap} kcal`:`✅ On track – ${-gap} kcal to spare`}</b></div>
+<div class="mu">${gap>0?"Small exercises to burn it off:":"Optional mini-boosters:"}</div>${list}
+<button class="sec" style="margin-top:8px" onclick="pinGap()">📌 Pin gap to my phone notifications</button></div>`}
+function report(meal){const d=today(),l=left(d);notify("KineticX: "+meal+" logged",gapMsg()+" "+`Eaten today: ${eaten(d)} kcal. `+(l>=0?`${l} kcal left for the day.`:`You are ${-l} kcal over today’s budget.`))}
+function nav(){$("#nav").innerHTML=[["today","🏠","Today"],["add","🍽️","Add meal"],["wo","💪","Workout"],["me","📊","BMI & plan"]].map(t=>`<button class="${tab==t[0]?"on":""}" onclick="tab='${t[0]}';toast='';render()">${t[1]}<br>${t[2]}</button>`).join("")}
+function today_(){const d=today(),e=eaten(d),b=burned(d),g=goal(),l=left(d),pct=Math.min(100,e/(g+b)*100),w=S.water[d]||0;
+const days=[...Array(7)].map((_,i)=>dayOf(6-i)),mx=Math.max(g,...days.map(eaten));
+let st=0;for(let i=0;i<30;i++){if(eaten(dayOf(i))>0)st++;else if(i>0)break}
+const m=missed(),sun=dow()==6,xp=S.wo.length*50+S.meals.length*10+Object.values(S.water).reduce((a,b)=>a+b,0)*5,lv=Math.floor(xp/200)+1;
+return `<div class="brand"><div class="logo">⚡ KineticX<small>Move · Fuel · Level up</small></div><div class="lv">Lv ${lv} · ${xp} XP</div></div><div class="hero"><div class="pet">${petSVG(pet()[0],96)}</div><div><b>${esc(S.p.pn||pet()[2])}</b> says:<div class="say">${say()}</div></div></div>
+${m>=2&&!S.wo.some(x=>x.date==today())?`<div class="warn">⚠️ You’ve skipped ${m} workout days this week. Time to go to the gym or play outside${sun?" today":" – and plan a workout this Sunday too"}! <button style="margin-top:8px" onclick="tab='wo';render()">Go to workout</button></div>`:""}
+${toast?`<div class="toast">🔔 <b>Meal report</b><br>${esc(toast)}</div>`:""}
+<h1>Hi ${esc(S.p.name||"champ")}!</h1><div class="mu">${new Date().toDateString()}</div>
+<div class="card"><div class="row"><div><div class="big" style="color:${l<0?"var(--bad)":"var(--ac)"}">${Math.abs(l)}</div><div class="mu">kcal ${l<0?"over budget":"left today"}</div></div><div class="mu">Budget ${g}${b?` + ${b} burned`:""}<br>Eaten ${e} kcal</div></div>
+<div class="bar"><i style="width:${pct}%;${l<0?"background:var(--bad)":""}"></i></div></div>
+${gapCard()}
+<div class="stats card"><div><b>${bmi().toFixed(1)}</b><span class="mu">BMI</span></div><div><b>${b}</b><span class="mu">kcal burned</span></div><div><b>🔥 ${st}</b><span class="mu">day streak</span></div></div>
+<div class="card"><h2>💧 Water: ${w} / 8 glasses</h2><div class="row"><button class="sec" onclick="water(1)">+ Glass</button><button class="sec" onclick="water(-1)">– Glass</button></div></div>
+<div class="card"><h2>Meals</h2>${MEALS.map(m=>{const L=S.meals.filter(x=>x.date==d&&x.meal==m);return L.length?`<div class="mu" style="margin-top:8px"><b>${m}</b> · ${L.reduce((a,x)=>a+x.kcal,0)} kcal</div>`+L.map(x=>`<div class="item"><span>${esc(x.name)} <span class="mu">× ${x.qty} ${x.unit||""} · ${esc(x.cuisine)}</span></span><span>${x.kcal} <button class="x" onclick="del('meals',${x.id})">✕</button></span></div>`).join(""):""}).join("")||""}${S.meals.some(x=>x.date==d)?"":'<div class="mu">Nothing logged yet.</div>'}</div>
+<div class="card"><h2>Last 7 days (kcal eaten)</h2><div class="chart">${days.map(x=>`<div><i style="height:${eaten(x)/mx*80}px;${eaten(x)>g+burned(x)?"background:var(--wr)":""}"></i>${new Date(x+"T12:00").toLocaleDateString("en",{weekday:"narrow"})}</div>`).join("")}</div></div>
+<div class="card mu">💡 ${TIPS[new Date().getDate()%TIPS.length]}</div>`}
+function add_(){const c=draft.cuisine,f=FOODS[c][draft.food]||FOODS[c][0];
+return `<h1>Add meal</h1>
+<div class="card"><h2>📷 Snap your food</h2><div class="mu">Upload a photo and Claude will estimate the calories. Adjust the quantity below.</div>
+<input type="file" accept="image/*" id="ph" onchange="photo(this)" style="margin-top:8px">${draft.img?`<img class="pv" src="${draft.img}">`:""}<div class="mu" id="st" style="margin-top:6px">${esc(draft.busy)}</div></div>
+<div class="card"><h2>Log a meal</h2>
+<label>Meal</label><select id="meal">${MEALS.map((m,i)=>`<option ${i==({0:0,1:1,2:2}[Math.floor(new Date().getHours()/5)-1]??3)?"selected":""}>${m}</option>`).join("")}</select>
+<label>Cuisine</label><select onchange="draft.cuisine=this.value;draft.food=0;draft.kcal=null;draft.name='';render()">${[...Object.keys(FOODS),"Other"].map(k=>`<option ${k==c?"selected":""}>${k}</option>`).join("")}</select>
+${c!="Other"?`<label>Dish</label><select onchange="draft.food=this.value;draft.kcal=null;draft.name='';render()">${FOODS[c].map((x,i)=>`<option value="${i}" ${i==draft.food?"selected":""}>${esc(x[0])} (${x[2]} kcal/${x[1]})</option>`).join("")}</select>`:""}
+<label>Dish name</label><input id="nm" value="${esc(draft.name||(c!="Other"?f[0]:""))}" placeholder="e.g. Paneer wrap">
+<div class="row"><div><label>Quantity consumed</label><input id="qty" type="number" step="0.5" min="0.25" value="1" oninput="upd()"></div>
+<div><label>Unit</label><input id="un" value="${esc(draft.name?"serving":c!="Other"?f[1]:"serving")}"></div>
+<div><label>kcal per unit</label><input id="kc" type="number" min="0" value="${draft.kcal??(c!="Other"?f[2]:"")}" oninput="upd()"></div></div>
+<div class="mu" id="tot" style="margin:8px 0">Total: –</div><button onclick="logMeal()">Log meal</button></div>`}
+function wo_(){const d=today(),g=S.p.goal,t=dow();
+return `<h1>Workout</h1><div class="card"><h2>Log a workout</h2>
+${Object.keys(WO).map(k=>`<button class="chip ${dw.type==k?"on":""}" onclick="dw.type='${k}';render()">${WI[k]} ${k}</button>`).join("")}
+${dw.type=="Gym"?`<label>Muscle group (pick one or more)</label>${GRP.map(x=>`<button class="chip ${dw.g.includes(x)?"on":""}" onclick="tg('${x}')">${x}</button>`).join("")}
+<label>Add your own</label><input value="${esc(dw.custom)}" placeholder="e.g. Shoulders, Biceps, Cardio machine" oninput="dw.custom=this.value">`:""}
+<label>Duration (minutes)</label><input type="number" min="1" value="${dw.min}" oninput="dw.min=+this.value"><br><br><button onclick="logWo()">Add workout</button><div class="mu" style="margin-top:6px">Calories are estimated from the activity and your weight.</div></div>
+<div class="card"><h2>🎯 My goal</h2>${[["lose","Lose weight"],["gain","Gain weight"],["maintain","Stay fit"]].map(x=>`<button class="chip ${g==x[0]?"on":""}" onclick="S.p.goal='${x[0]}';save();render()">${x[1]}</button>`).join("")}
+<h2 style="margin-top:12px">📅 Your 6-day plan (Mon–Sat)</h2>${PLAN[g].map((p,i)=>`<div class="day ${i==t?"now":""}"><b>${D[i]}</b><span>${WI[p[0]]} ${p[0]}${p[1]?" – "+p[1]:""}, ${p[2]} min<br><small class="mu">${p[3]}</small></span><button class="sec" onclick="usePlan(${i})">Log</button></div>`).join("")}
+<div class="day ${t==6?"now":""}"><b>Sun</b><span>😴 Rest day<br><small class="mu">Bonus workout if you missed 2+ days.</small></span></div></div>
+<div class="card"><h2>Today</h2>${S.wo.filter(w=>w.date==d).map(w=>`<div class="item"><span>${WI[w.type]||""} ${esc(w.type)}${w.detail?" – "+esc(w.detail):""} · ${w.min} min</span><span>${w.kcal} kcal <button class="x" onclick="del('wo',${w.id})">✕</button></span></div>`).join("")||'<div class="mu">No workouts yet. Even 15 minutes counts!</div>'}</div>
+<div class="card"><h2>This week</h2><div class="stats"><div><b>${[...Array(7)].reduce((a,_,i)=>a+S.wo.filter(w=>w.date==dayOf(i)).length,0)}</b><span class="mu">sessions</span></div><div><b>${[...Array(7)].reduce((a,_,i)=>a+S.wo.filter(w=>w.date==dayOf(i)).reduce((s,w)=>s+w.min,0),0)}</b><span class="mu">minutes</span></div><div><b>${[...Array(7)].reduce((a,_,i)=>a+burned(dayOf(i)),0)}</b><span class="mu">kcal</span></div></div></div>`}
+function tg(x){dw.g=dw.g.includes(x)?dw.g.filter(y=>y!=x):[...dw.g,x];render()}
+function usePlan(i){const p=PLAN[S.p.goal][i];dw={type:p[0],g:p[1]?p[1].split(", "):[],custom:"",min:p[2]};render();scrollTo(0,0)}
+function me_(){const p=S.p,b=bmi(),[cat,col]=bmiCat(b),lo=(18.5*(p.h/100)**2).toFixed(1),hi=(24.9*(p.h/100)**2).toFixed(1);
+const f=(k,l,t="number")=>`<div><label>${l}</label><input type="${t}" value="${p[k]}" onchange="S.p.${k}=+this.value;save();render()"></div>`;
+return `<h1>BMI & plan</h1><div class="card"><div class="big" style="color:${col}">${b.toFixed(1)}</div><div><b style="color:${col}">${cat}</b></div><div class="mu">Healthy weight for your height: ${lo}–${hi} kg</div>
+<div class="bar" style="background:linear-gradient(90deg,#e0803a 0 18%,#2e9c5f 18% 45%,#e0803a 45% 65%,#d64545 65%)"><i style="width:2px;background:var(--tx);margin-left:${Math.min(98,Math.max(0,(b-10)/30*100))}%"></i></div><div class="mu">Daily calorie budget: <b>${goal()} kcal</b></div></div>
+<div class="card"><h2>Your details</h2><div class="row">${f("h","Height (cm)")}${f("w","Weight (kg)")}${f("age","Age")}</div>
+<label>Gender</label><select onchange="setSex(this.value)"><option value="m" ${p.sex=="m"?"selected":""}>Male</option><option value="f" ${p.sex=="f"?"selected":""}>Female</option></select>
+<label>Activity level</label><select onchange="S.p.act=+this.value;save();render()">${[[1.2,"Sedentary"],[1.375,"Lightly active"],[1.55,"Moderately active"],[1.725,"Very active"]].map(a=>`<option value="${a[0]}" ${a[0]==p.act?"selected":""}>${a[1]}</option>`).join("")}</select>
+<label>Goal</label><select onchange="S.p.goal=this.value;save();render()">${[["lose","Lose weight (−400 kcal)"],["maintain","Maintain"],["gain","Gain (+300 kcal)"]].map(a=>`<option value="${a[0]}" ${a[0]==p.goal?"selected":""}>${a[1]}</option>`).join("")}</select></div>
+<div class="card"><h2>🐾 Workout buddy</h2><div class="pets">${petGrid()}</div><label>Nickname</label><input value="${esc(p.pn||"")}" placeholder="${pet()[2]}" onchange="S.p.pn=this.value;save();render()"></div>
+<div class="card"><h2>🔔 Notifications</h2><div class="mu">After every meal you get a report in the app. Tap below to also allow device notifications (works while this page is open in your browser).</div><br><div id="ns" style="margin-bottom:8px">${nState()}</div><button class="sec" onclick="askN()">Enable notifications</button><div class="mu" style="margin-top:8px">Your calorie-gap summary is sent after every meal or workout and stays in your notification shade until you dismiss it.</div></div>`}
+function petGrid(){return PETS[S.p.sex].map(x=>`<button class="${x[0]==S.p.pet?"on":""}" onclick="S.p.pet='${x[0]}';save();render()"><b>${petSVG(x[0],64)}</b>${x[2]}</button>`).join("")}
+function setSex(v){S.p.sex=v;S.p.pet=PETS[v][0][0];S.p.pn="";save();theme();render()}
+function setup(){return `<h1>Welcome to <span class="logo">⚡ KineticX</span></h1><div class="mu">Move. Fuel. Level up. Earn XP for every workout, meal and glass of water.</div>
+<div class="card"><label>Your name</label><input id="sn" placeholder="Your name" value="${esc(S.p.name)}">
+<label>I am</label><button class="chip ${S.p.sex=="m"?"on":""}" onclick="S.p.name=$('#sn').value;setSex('m')">👨 Male</button><button class="chip ${S.p.sex=="f"?"on":""}" onclick="S.p.name=$('#sn').value;setSex('f')">👩 Female</button>
+<label>My goal</label>${[["lose","Lose weight"],["gain","Gain weight"],["maintain","Stay fit"]].map(x=>`<button class="chip ${S.p.goal==x[0]?"on":""}" onclick="S.p.name=$('#sn').value;S.p.goal='${x[0]}';render()">${x[1]}</button>`).join("")}
+<label>Choose your workout buddy</label><div class="pets">${petGrid()}</div><br><button onclick="S.p.name=$('#sn').value;S.p.set=1;save();render()">Let’s go! 🚀</button></div>`}
+function render(){theme();if(!S.p.set){$("#nav").innerHTML="";$("#app").innerHTML=setup();return}nav();$("#app").innerHTML={today:today_,add:add_,wo:wo_,me:me_}[tab]();if(tab=="add")upd()}
+function upd(){const q=+($("#qty")||{}).value,k=+($("#kc")||{}).value;if($("#tot"))$("#tot").textContent="Total: "+(q&&k?Math.round(q*k)+" kcal":"–")}
+function logMeal(){const q=+$("#qty").value,k=+$("#kc").value,n=$("#nm").value.trim();if(!n||!q||!k){alert("Please enter a dish, quantity and kcal per unit.");return}
+const m=$("#meal").value;S.meals.push({id:Date.now(),date:today(),meal:m,name:n,cuisine:draft.cuisine,qty:q,unit:$("#un").value,kcal:Math.round(q*k)});save();draft={cuisine:draft.cuisine,food:0,kcal:null,name:"",img:null,busy:""};report(m);tab="today";render()}
+function logWo(){const t=dw.type,m=dw.min;if(!m)return;const det=[...(t=="Gym"?dw.g:[]),...(t=="Gym"&&dw.custom.trim()?[dw.custom.trim()]:[])].join(", ");S.wo.push({id:Date.now(),date:today(),type:t,detail:det,min:m,kcal:Math.round(WO[t]*S.p.w*m/60)});save();notify("Workout logged",`${t} ${m} min – ${Math.round(WO[t]*S.p.w*m/60)} kcal burned. ${pet()[2]} is proud of you!`);dw.g=[];dw.custom="";tab="today";render()}
+function del(k,id){S[k]=S[k].filter(x=>x.id!=id);save();render()}
+function water(n){const d=today();S.water[d]=Math.max(0,(S.water[d]||0)+n);save();render()}
+function nState(){if(!("Notification"in window))return "❌ Not supported in this browser/app. On iPhone, add the app to the Home Screen from Safari first.";const p=Notification.permission;return p=="granted"?"✅ Notifications are ON":p=="denied"?"🚫 Blocked. Open your phone Settings → Apps/Notifications → KineticX (or your browser) → allow Notifications, then reopen the app.":"⏳ Not enabled yet. Tap the button below."}
+async function askN(){if(!("Notification"in window)){alert(nState());return}
+if(Notification.permission=="denied"){alert(nState());return}
+try{const r=await Notification.requestPermission();if(r=="granted")notify("⚡ KineticX","Notifications are on! You’ll get your calorie summary after every meal and workout.");else alert(nState())}catch(e){alert("Could not ask for permission: "+(e&&e.message||e))}render()}
+async function photo(inp){const f=inp.files[0];if(!f)return;
+const st=m=>{draft.busy=m;const e=$("#st");if(e)e.textContent=m};
+try{const im=await createImageBitmap(f),k=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*k;c.height=im.height*k;c.getContext("2d").drawImage(im,0,0,c.width,c.height);
+draft.img=c.toDataURL("image/jpeg",.7);const blob=await new Promise(r=>c.toBlob(r,"image/jpeg",.8));
+draft.busy="⏳ Asking Claude to estimate calories… this can take up to a minute. If a permission box appears, tap Allow.";render();
+const sample=await claude.use("sample");
+if(!sample){st("Photo analysis isn’t available in this view. Please pick the dish manually below.");return}
+const {text}=await sample('Look at this photo of food. Identify the dish and estimate calories for ONE typical serving as visible in the photo. Reply with ONLY JSON, no other text: {"name":"dish name","cuisine":"Indian|Chinese|Italian|American|Other","unit":"plate|bowl|pc","kcal_per_unit":number,"qty_visible":number}',{images:[blob],modelTier:"quick",cache:false});
+const r=JSON.parse(text.match(/\{[\s\S]*\}/)[0]),kc=Math.round(+r.kcal_per_unit),q=+r.qty_visible||1;
+if(!kc)throw new Error("no calories returned");
+draft.cuisine=FOODS[r.cuisine]?r.cuisine:"Other";draft.name=r.name;draft.kcal=kc;draft.food=0;
+draft.busy=`✅ ${r.name}: about ${kc} kcal per ${r.unit||"serving"} (${Math.round(kc*q)} kcal for ${q}). Adjust the quantity if needed, then tap Log meal.`;
+render();$("#un").value=r.unit||"serving";$("#qty").value=q;upd()}
+catch(e){st("Couldn’t analyse the photo ("+((e&&(e.code||e.message))||"error")+"). Please pick the dish manually below.");}}
+try{if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}
+render();
+</script></body></html>
